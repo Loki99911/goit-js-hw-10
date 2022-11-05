@@ -9,6 +9,8 @@ const inputEl = document.querySelector('#search-box');
 const listEl = document.querySelector('.country-list');
 const cardEl = document.querySelector('.country-info');
 
+listEl.style.listStyle = "none";
+
 inputEl.addEventListener('input', debounce(onInputEvent, 1500));
 
 function onInputEvent(event) {
@@ -26,7 +28,7 @@ function onInputEvent(event) {
         );
       }
       if (countries.length <= 10 && countries.length >= 2) {
-        // cleanAll(listEl,cardEl);
+        cleanAll(listEl,cardEl);
         moreTwoLesTen(countries, listEl);
       }
       if (countries.length === 1) {
